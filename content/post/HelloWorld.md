@@ -1,5 +1,8 @@
 ---
-title: Hello, World!
+title: Baptême de Li
+imgSrc: /uploads/bapteme1.jpg
+categories:
+  - baptème
 ---
 
-Edit me!
+Un petit verre?

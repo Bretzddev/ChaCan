@@ -35,6 +35,11 @@ const schema = defineSchema({
           name: "title",
         },
         {
+          type: 'image',
+          label: 'Hero image',
+          name: 'imgSrc',
+        },
+        {
           type: "string",
           label: "Blog Post Body",
           name: "body",
@@ -42,6 +47,38 @@ const schema = defineSchema({
           ui: {
             component: "textarea",
           },
+        },
+        {
+          label: 'Categories',
+          name: 'categories',
+          type: 'string',
+          list: true,
+          options: [
+            {
+              value: 'baptême',
+              label: 'Baptême',
+            },
+            {
+              value: 'couple',
+              label: 'Coupe',
+            },
+            {
+              value: 'famille',
+              label: 'Famille',
+            },
+            {
+              value: 'grossesse',
+              label: 'Grossesse',
+            },
+            {
+              value: 'mariage',
+              label: 'Mariage',
+            },
+            {
+              value: 'portrait',
+              label: 'Portrait',
+            },
+          ],
         },
       ],
       ui: {
