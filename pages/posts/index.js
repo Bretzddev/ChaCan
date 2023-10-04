@@ -11,14 +11,54 @@ export default function PostList(props) {
     data: props.data,
   });
   const postsList = data.postConnection.edges;
+
+  const styleImgCard ={
+    margin: '10px',
+    width: '250px',
+    height: '250px',
+    border: 'solid 2px',
+    borderColor: '#176B87',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#176B87',
+  }
+
+  const styleImg ={
+    width: '250px',
+    height: '200px',
+  }
+
+  const styleText ={
+    color: '#DAFFFB',
+    height: '50px',
+    fontSize: '20px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+
+  }
+
+  const galleryStyle ={
+    display: 'flex',
+    flexDirection: 'row',
+    
+  }
+
   return (
     <Layout>
       <h1>Gallerie des photos</h1>
-      <div>
+      <div style={galleryStyle}> 
         {postsList.map((post) => (
           <div key={post.node.id}>
             <Link href={`/posts/${post.node._sys.filename}`}>
-              <a>{post.node._sys.filename}</a>
+              <a>
+                <div style={styleImgCard}>
+                <img src={post.node.imgSrc} alt={post.node.altImg} style={styleImg}/>
+                <div style={styleText}>{post.node._sys.filename}</div>
+                </div>
+                </a>
             </Link>
           </div>
         ))}

@@ -25,23 +25,50 @@ const schema = defineSchema({
       },
     },
     {
-      label: "Blog Posts",
+      label: "Prestations",
+      name: "presta",
+      path: "content/page",
+      format: "mdx",
+      fields: [
+        {
+          name: "body",
+          label: "Main Content",
+          type: "rich-text",
+          isBody: true,
+        },
+      ],
+      ui: {
+        router: ({ document }) => {
+          if (document._sys.filename === "presta") {
+            return `/presta`;
+          }
+          return undefined;
+        },
+      },
+    },
+    {
+      label: "Gallerie Photos",
       name: "post",
       path: "content/post",
       fields: [
         {
           type: "string",
-          label: "Title",
+          label: "Titre du post",
           name: "title",
         },
         {
           type: 'image',
-          label: 'Hero image',
+          label: 'Selection de l\'image',
           name: 'imgSrc',
         },
         {
+          type: 'string',
+          label: 'Commentaire de la photo',
+          name: 'altImg',
+        },
+        {
           type: "string",
-          label: "Blog Post Body",
+          label: "Contenu du post",
           name: "body",
           isBody: true,
           ui: {
@@ -60,7 +87,7 @@ const schema = defineSchema({
             },
             {
               value: 'couple',
-              label: 'Coupe',
+              label: 'Couple',
             },
             {
               value: 'famille',

@@ -13,11 +13,7 @@ export default function Home(props) {
   return (
     <Layout>
       <code>
-        <pre
-          style={{
-            backgroundColor: "lightgray",
-          }}
-        >
+        <pre style={{backgroundColor: "lightgray",}}>
           {JSON.stringify(data.post, null, 2)}
         </pre>
       </code>
